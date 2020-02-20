@@ -1,0 +1,45 @@
+<%- include("../partials/header") %>
+
+<!-- <nav class="navbar navbar-light bg-light">
+	<div class="container-fluid">
+		<div class = "navbar-header">
+			<a class = "navbar-brand" href="/">YelpCamp</a>
+		</div>
+		<div class = "collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/">Login</a></li>
+				<li><a href="/">Sign Up</a></li>
+				<li><a href="/">LogOut</a></li>
+			</ul>
+		</div>
+	</div>
+</nav> -->
+
+<div class="container">
+	<header class = "jumbotron">
+		<div class="container">		
+			<h1>Welcom to YelpCamp!</h1>
+			<p>View Our hand-picked campgrounds from all over the world!</p>
+			<a class="btn btn-primary btn-lg" href = "/campgrounds/new">Add New Campground!</a>
+		</div>
+	</header>
+	
+	<div class = "row text-center" style="display:flex; flex-wrap:wrap;">
+		<% campgrounds.forEach(function(campground){  %>
+			<div class = "col-md-3 col-sm-6">
+				<div class = "card">
+					<img class="card-img-top" src = "<%= campground.img %>">
+					<div class="card-body">
+						<h4><%= campground.name %> </h4>	
+						<!-- <p> -->
+						<a href="/campgrounds/<%=campground._id%>" class="btn btn-primary">More Info</a>
+						<!-- </p> -->
+					</div>
+				</div>
+			</div>				   
+		<%})%>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>
+
