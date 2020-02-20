@@ -23,6 +23,8 @@ mongoose.set('useUnifiedTopology', true);
 // mongoose.connect("mongodb://localhost/YelpCampV9");
 mongoose.connect("mongodb+srv://JixuanLiu:Niu2@pet@cluster0-teayk.mongodb.net/test?retryWrites=true&w=majority");
 
+// process.env.databaseURL 
+
 // mongodb+srv://JixuanLiu:Niu2@pet@cluster0-teayk.mongodb.net/test?retryWrites=true&w=majority
 
 app.set("view engine", "ejs");
@@ -60,7 +62,7 @@ app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT || 5000, function(){
+app.listen(process.env.PORT || 3000, function(){
 	console.log("YelpCamp has started");
 });
 
