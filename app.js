@@ -21,11 +21,9 @@ var commentRoutes = require("./routes/comments"),
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
 // mongoose.connect("mongodb://localhost/YelpCampV9");
-mongoose.connect("mongodb+srv://JixuanLiu:Niu2@pet@cluster0-teayk.mongodb.net/test?retryWrites=true&w=majority");
 
-// process.env.databaseURL 
-
-// mongodb+srv://JixuanLiu:Niu2@pet@cluster0-teayk.mongodb.net/test?retryWrites=true&w=majority
+mongoose.connect(process.env.DATABASEURL);
+// mongoose.connect("mongodb+srv://JixuanLiu:Niu2@pet@cluster0-teayk.mongodb.net/test?retryWrites=true&w=majority");
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
