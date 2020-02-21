@@ -91,7 +91,7 @@ router.delete("/:comment_id", middleware.checkCommentOwnership, function(req, re
 function checkCampgroundId (req, res) {
 	Campground.findById(req.params.id, function(err, foundCampground){
 		if (err || !foundCampground) {
-			req.flash("error", "Cannot find campground");
+			req.flash("error", "Cannot find this outdoor activity");
 			res.redirect("back");
 			return false;
 		}

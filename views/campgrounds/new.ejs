@@ -1,31 +1,32 @@
 <%- include("../partials/header") %>
 
-<div class = "container">
-	<h1 style="text-align: center;">
-		Create a new Campgrounds!!!
+<div>
+    <h1 class="text-center" style="text-align: center">
+		Share you outdoor activity
 	</h1>
-	<div class = "row">
-		<div style="width:30%; margin: 25px auto;">
-			<form action = "/campgrounds" method="POST">
-				<div class = "form-group">
-					<input class="form-control" type="text" name = "name" placeholder="name">
-				</div>
-				<div class = "form-group">
-					<input class="form-control" type="text" name = "img" placeholder="imgage url">
-				</div>
-				<div class = "form-group">
-					<input class="form-control" type="text" name = "description" placeholder="description">
-				</div>
-				<div class = "form-group">
-					<input class="form-control" type="number" name = "price" placeholder="$ price/night" min="0.01" step="0.01">
-				</div>
-				<div class = "form-group">
-					<button class="btn btn-primary btn-block">Submit!</button>
-				</div>
-			</form>
-			<a href = "/campgrounds">Back to Campgrounds</a>
-		</div>
-	</div>
+    <div class="row">
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/campgrounds" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="campground[name]" placeholder="name">
+                </div>
+                <div class="form-group">
+                    <!-- <label for="image">Image</label>
+                    <input type="file" id="image" name="image" accept="image/*" required> -->
+					<label for="exampleFormControlFile1">Image</label>
+    				<input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" accept="image/*" required>
+                </div>
+                <div class="form-group">
+					<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" type="text" name = "campground[description]" placeholder="description"></textarea>
+                    <!-- <input class="form-control" type="text" name="campground[description]" placeholder="description"> -->
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/campgrounds">Go Back</a>
+        </div>
+    </div>
 	
 </div>
 	

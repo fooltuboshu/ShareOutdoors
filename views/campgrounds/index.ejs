@@ -18,9 +18,11 @@
 <div class="container">
 	<header class = "jumbotron">
 		<div class="container">		
-			<h1>Welcom to YelpCamp!</h1>
-			<p>View Our hand-picked campgrounds from all over the world!</p>
-			<a class="btn btn-primary btn-lg" href = "/campgrounds/new">Add New Campground!</a>
+			<h1 class="text-center">Discover all the mysteries!</h1>
+			<!-- <h2></h2> -->
+			<div class="text-center">
+				<a class="btn btn-outline-primary btn-lg" href = "/campgrounds/new">Share you outdoor activity!</a>			
+			</div>
 		</div>
 	</header>
 	
@@ -32,7 +34,7 @@
 					<div class="card-body">
 						<h4><%= campground.name %> </h4>	
 						<!-- <p> -->
-						<a href="/campgrounds/<%=campground._id%>" class="btn btn-primary">More Info</a>
+						<a href="/campgrounds/<%=campground._id%>" class="btn btn-outline-primary">More Info</a>
 						<!-- </p> -->
 					</div>
 				</div>

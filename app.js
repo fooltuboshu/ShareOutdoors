@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser"),
@@ -15,15 +17,15 @@ var express = require("express"),
 var commentRoutes = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
 	indexRoutes = require("./routes/index");
-	
+
+
 // seedDB(); // seed the database
+// console.log(process.env.CLOUDINARY_API_KEY);
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
-// mongoose.connect("mongodb://localhost/YelpCampV9");
-
 mongoose.connect(process.env.DATABASEURL);
-// mongoose.connect("mongodb+srv://JixuanLiu:Niu2@pet@cluster0-teayk.mongodb.net/test?retryWrites=true&w=majority");
+
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
@@ -61,6 +63,6 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 app.listen(process.env.PORT || 3000, function(){
-	console.log("YelpCamp has started");
+	console.log("ShareOutdoors has started");
 });
 
